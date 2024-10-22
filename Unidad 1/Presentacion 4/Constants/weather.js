@@ -1,0 +1,7 @@
+const KELVIN_VALUE = 273.15;
+const FAHRENHEIT_VALUE = 32;
+
+export {
+    KELVIN_VALUE,
+    FAHRENHEIT_VALUE
+}
