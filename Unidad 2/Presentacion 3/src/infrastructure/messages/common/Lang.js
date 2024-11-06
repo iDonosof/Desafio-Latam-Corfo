@@ -1,7 +1,7 @@
 const lang = {
     SEE_INFORMATION: "Ver Informacion",
     ADD_RECORD: "Agregar Registro",
-    MORE_OPTION: "Mas informacion",
+    MORE_OPTION: "Mas Opciones",
     EXIT: "Salir",
     BACK: "Atras",
     CLIENTS: "Clientes",

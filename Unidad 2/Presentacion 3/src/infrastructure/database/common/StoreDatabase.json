@@ -52,56 +52,356 @@
         { "id": 50, "name": "Tully Shotter", "email": "tshotter1d@smugmug.com" }
     ],
     "products": [
-        { "id": 1, "name": "Mylan N.V.", "price": 1205, "category": "Home Automation Devices", "stock": 32 },
-        { "id": 2, "name": "EPR Properties", "price": 76430, "category": "Virtual Reality Headsets", "stock": 17 },
-        { "id": 3, "name": "Seaspan Corporation", "price": 5091, "category": "Headphones", "stock": 35 },
-        { "id": 4, "name": "The Herzfeld Caribbean Basin Fund, Inc.", "price": 42390, "category": "Virtual Reality Headsets", "stock": 79 },
-        { "id": 5, "name": "Meridian Waste Solutions, Inc", "price": 9989, "category": "Drones", "stock": 44 },
-        { "id": 6, "name": "Delcath Systems, Inc.", "price": 4866, "category": "Drones", "stock": 81 },
-        { "id": 7, "name": "Dime Community Bancshares, Inc.", "price": 8462, "category": "Smartphones", "stock": 66 },
-        { "id": 8, "name": "GTx, Inc.", "price": 7424, "category": "Headphones", "stock": 30 },
-        { "id": 9, "name": "NXP Semiconductors N.V.", "price": 6088, "category": "Laptops", "stock": 53 },
-        { "id": 10, "name": "Banco Santander Chile", "price": 5530, "category": "Gaming Consoles", "stock": 34 },
-        { "id": 11, "name": "Eaton Vance Tax-Advantaged Bond", "price": 82330, "category": "Drones", "stock": 5 },
-        { "id": 12, "name": "GATX Corporation", "price": 9514, "category": "Laptops", "stock": 16 },
-        { "id": 13, "name": "Sears Holdings Corporation", "price": 2141, "category": "Home Automation Devices", "stock": 25 },
-        { "id": 14, "name": "Ameren Corporation", "price": 2104, "category": "Smartphones", "stock": 58 },
-        { "id": 15, "name": "CACI International, Inc.", "price": 7611, "category": "Home Automation Devices", "stock": 14 },
-        { "id": 16, "name": "Global X Guru Activist ETF", "price": 17, "category": "Headphones", "stock": 39 },
-        { "id": 17, "name": "Progress Software Corporation", "price": 6243, "category": "Virtual Reality Headsets", "stock": 11 },
-        { "id": 18, "name": "BCE, Inc.", "price": 8458, "category": "Gaming Consoles", "stock": 23 },
-        { "id": 19, "name": "Global X SuperDividend Alternatives ETF", "price": 122, "category": "Smartwatches", "stock": 77 },
-        { "id": 20, "name": "Bank Of New York Mellon Corporation (The)", "price": 25480, "category": "Virtual Reality Headsets", "stock": 67 },
-        { "id": 21, "name": "Koppers Holdings Inc.", "price": 6100, "category": "Home Automation Devices", "stock": 74 },
-        { "id": 22, "name": "iPath US Treasury 2-year Bear ETN", "price": 63580, "category": "Virtual Reality Headsets", "stock": 88 },
-        { "id": 23, "name": "Hartford Financial Services Group, Inc. (The)", "price": 505, "category": "Virtual Reality Headsets", "stock": 93 },
-        { "id": 24, "name": "ONE Gas, Inc.", "price": 2553, "category": "Laptops", "stock": 81 },
-        { "id": 25, "name": "Blackrock MuniAssets Fund, Inc.", "price": 2633, "category": "Smartwatches", "stock": 19 },
-        { "id": 26, "name": "Builders FirstSource, Inc.", "price": 7533, "category": "Virtual Reality Headsets", "stock": 12 },
-        { "id": 27, "name": "Canadian Solar Inc.", "price": 5882, "category": "Gaming Consoles", "stock": 36 },
-        { "id": 28, "name": "Packaging Corporation of America", "price": 4297, "category": "Cameras", "stock": 62 },
-        { "id": 29, "name": "SuperValu Inc.", "price": 8078, "category": "Tablets", "stock": 70 },
-        { "id": 30, "name": "Nuveen NASDAQ 100 Dynamic Overwrite Fund", "price": 73270, "category": "Gaming Consoles", "stock": 50 },
-        { "id": 31, "name": "MDC Partners Inc.", "price": 9365, "category": "Home Automation Devices", "stock": 100 },
-        { "id": 32, "name": "Hersha Hospitality Trust", "price": 8916, "category": "Virtual Reality Headsets", "stock": 60 },
-        { "id": 33, "name": "Zogenix, Inc.", "price": 4833, "category": "Smartphones", "stock": 77 },
-        { "id": 34, "name": "Uni-Pixel, Inc.", "price": 2445, "category": "Cameras", "stock": 19 },
-        { "id": 35, "name": "Eaton Vance Tax-Managed Diversified Equity Income Fund", "price": 5457, "category": "Headphones", "stock": 13 },
-        { "id": 36, "name": "Capital City Bank Group", "price": 540, "category": "Home Automation Devices", "stock": 68 },
-        { "id": 37, "name": "Virtus Investment Partners, Inc.", "price": 6667, "category": "Gaming Consoles", "stock": 12 },
-        { "id": 38, "name": "Capitol Federal Financial, Inc.", "price": 7190, "category": "Home Automation Devices", "stock": 34 },
-        { "id": 39, "name": "Oi S.A.", "price": 9408, "category": "Headphones", "stock": 10 },
-        { "id": 40, "name": "Southern California Edison Company", "price": 6257, "category": "Smartwatches", "stock": 37 },
-        { "id": 41, "name": "Nu Skin Enterprises, Inc.", "price": 3966, "category": "Smartphones", "stock": 90 },
-        { "id": 42, "name": "Tetra Tech, Inc.", "price": 5297, "category": "Tablets", "stock": 33 },
-        { "id": 43, "name": "Entergy Texas Inc", "price": 4972, "category": "Cameras", "stock": 76 },
-        { "id": 44, "name": "Verastem, Inc.", "price": 369, "category": "Laptops", "stock": 98 },
-        { "id": 45, "name": "NACCO Industries, Inc.", "price": 2566, "category": "Drones", "stock": 16 },
-        { "id": 46, "name": "Pool Corporation", "price": 1990, "category": "Drones", "stock": 74 },
-        { "id": 47, "name": "BioShares Biotechnology Products Fund", "price": 43340, "category": "Headphones", "stock": 68 },
-        { "id": 48, "name": "American Equity Investment Life Holding Company", "price": 2316, "category": "Cameras", "stock": 32 },
-        { "id": 49, "name": "Virtus Total Return Fund Inc.", "price": 9603, "category": "Tablets", "stock": 85 },
-        { "id": 50, "name": "StoneCastle Financial Corp", "price": 84180, "category": "Laptops", "stock": 28 }
+        {
+            "id": 1,
+            "name": "Manzana Roja",
+            "price": 13500,
+            "category": "Frutas",
+            "stock": 17
+        },
+        {
+            "id": 2,
+            "name": "Manzana Verde",
+            "price": 28000,
+            "category": "Frutas",
+            "stock": 7
+        },
+        {
+            "id": 3,
+            "name": "Plátano",
+            "price": 36500,
+            "category": "Frutas",
+            "stock": 21
+        },
+        {
+            "id": 4,
+            "name": "Pera",
+            "price": 22000,
+            "category": "Frutas",
+            "stock": 25
+        },
+        {
+            "id": 5,
+            "name": "Uva",
+            "price": 17500,
+            "category": "Frutas",
+            "stock": 11
+        },
+        {
+            "id": 6,
+            "name": "Sandía",
+            "price": 32000,
+            "category": "Frutas",
+            "stock": 4
+        },
+        {
+            "id": 7,
+            "name": "Melón",
+            "price": 25000,
+            "category": "Frutas",
+            "stock": 15
+        },
+        {
+            "id": 8,
+            "name": "Piña",
+            "price": 49500,
+            "category": "Frutas",
+            "stock": 8
+        },
+        {
+            "id": 9,
+            "name": "Mango",
+            "price": 31000,
+            "category": "Frutas",
+            "stock": 27
+        },
+        {
+            "id": 10,
+            "name": "Durazno",
+            "price": 42000,
+            "category": "Frutas",
+            "stock": 6
+        },
+        {
+            "id": 11,
+            "name": "Limón",
+            "price": 15000,
+            "category": "Frutas",
+            "stock": 19
+        },
+        {
+            "id": 12,
+            "name": "Naranja",
+            "price": 17000,
+            "category": "Frutas",
+            "stock": 9
+        },
+        {
+            "id": 13,
+            "name": "Fresa",
+            "price": 33000,
+            "category": "Frutas",
+            "stock": 5
+        },
+        {
+            "id": 14,
+            "name": "Kiwi",
+            "price": 44000,
+            "category": "Frutas",
+            "stock": 28
+        },
+        {
+            "id": 15,
+            "name": "Papaya",
+            "price": 27500,
+            "category": "Frutas",
+            "stock": 14
+        },
+        {
+            "id": 16,
+            "name": "Cereza",
+            "price": 37000,
+            "category": "Frutas",
+            "stock": 16
+        },
+        {
+            "id": 17,
+            "name": "Granada",
+            "price": 41500,
+            "category": "Frutas",
+            "stock": 18
+        },
+        {
+            "id": 18,
+            "name": "Higo",
+            "price": 35500,
+            "category": "Frutas",
+            "stock": 12
+        },
+        {
+            "id": 19,
+            "name": "Mandarina",
+            "price": 28500,
+            "category": "Frutas",
+            "stock": 23
+        },
+        {
+            "id": 20,
+            "name": "Frambuesa",
+            "price": 27000,
+            "category": "Frutas",
+            "stock": 3
+        },
+        {
+            "id": 21,
+            "name": "Lechuga",
+            "price": 14500,
+            "category": "Verduras",
+            "stock": 2
+        },
+        {
+            "id": 22,
+            "name": "Espinaca",
+            "price": 16000,
+            "category": "Verduras",
+            "stock": 25
+        },
+        {
+            "id": 23,
+            "name": "Acelga",
+            "price": 13000,
+            "category": "Verduras",
+            "stock": 30
+        },
+        {
+            "id": 24,
+            "name": "Perejil",
+            "price": 11000,
+            "category": "Verduras",
+            "stock": 1
+        },
+        {
+            "id": 25,
+            "name": "Apio",
+            "price": 19500,
+            "category": "Verduras",
+            "stock": 13
+        },
+        {
+            "id": 26,
+            "name": "Cilantro",
+            "price": 12000,
+            "category": "Verduras",
+            "stock": 29
+        },
+        {
+            "id": 27,
+            "name": "Cebolla",
+            "price": 17000,
+            "category": "Verduras",
+            "stock": 6
+        },
+        {
+            "id": 28,
+            "name": "Cebolla Morada",
+            "price": 20000,
+            "category": "Verduras",
+            "stock": 15
+        },
+        {
+            "id": 29,
+            "name": "Zanahoria",
+            "price": 12500,
+            "category": "Verduras",
+            "stock": 8
+        },
+        {
+            "id": 30,
+            "name": "Pepino",
+            "price": 13500,
+            "category": "Verduras",
+            "stock": 27
+        },
+        {
+            "id": 31,
+            "name": "Pimiento Rojo",
+            "price": 21000,
+            "category": "Verduras",
+            "stock": 20
+        },
+        {
+            "id": 32,
+            "name": "Pimiento Verde",
+            "price": 18000,
+            "category": "Verduras",
+            "stock": 11
+        },
+        {
+            "id": 33,
+            "name": "Pimiento Amarillo",
+            "price": 21500,
+            "category": "Verduras",
+            "stock": 24
+        },
+        {
+            "id": 34,
+            "name": "Tomate",
+            "price": 16500,
+            "category": "Verduras",
+            "stock": 30
+        },
+        {
+            "id": 35,
+            "name": "Tomate Cherry",
+            "price": 25000,
+            "category": "Verduras",
+            "stock": 12
+        },
+        {
+            "id": 36,
+            "name": "Calabacín",
+            "price": 24500,
+            "category": "Verduras",
+            "stock": 19
+        },
+        {
+            "id": 37,
+            "name": "Berenjena",
+            "price": 27500,
+            "category": "Verduras",
+            "stock": 10
+        },
+        {
+            "id": 38,
+            "name": "Coliflor",
+            "price": 24000,
+            "category": "Verduras",
+            "stock": 16
+        },
+        {
+            "id": 39,
+            "name": "Brócoli",
+            "price": 28000,
+            "category": "Verduras",
+            "stock": 22
+        },
+        {
+            "id": 40,
+            "name": "Papa",
+            "price": 15500,
+            "category": "Tubérculos",
+            "stock": 9
+        },
+        {
+            "id": 41,
+            "name": "Camote",
+            "price": 24500,
+            "category": "Tubérculos",
+            "stock": 27
+        },
+        {
+            "id": 42,
+            "name": "Yuca",
+            "price": 20000,
+            "category": "Tubérculos",
+            "stock": 14
+        },
+        {
+            "id": 43,
+            "name": "Rábano",
+            "price": 12500,
+            "category": "Raíces",
+            "stock": 5
+        },
+        {
+            "id": 44,
+            "name": "Jengibre",
+            "price": 30500,
+            "category": "Raíces",
+            "stock": 20
+        },
+        {
+            "id": 45,
+            "name": "Ajo",
+            "price": 15500,
+            "category": "Bulbos",
+            "stock": 4
+        },
+        {
+            "id": 46,
+            "name": "Cebollín",
+            "price": 19000,
+            "category": "Bulbos",
+            "stock": 28
+        },
+        {
+            "id": 47,
+            "name": "Champiñones",
+            "price": 34000,
+            "category": "Hongos",
+            "stock": 30
+        },
+        {
+            "id": 48,
+            "name": "Setas",
+            "price": 29000,
+            "category": "Hongos",
+            "stock": 16
+        },
+        {
+            "id": 49,
+            "name": "Lentejas",
+            "price": 15500,
+            "category": "Legumbres",
+            "stock": 3
+        },
+        {
+            "id": 50,
+            "name": "Garbanzos",
+            "price": 25000,
+            "category": "Legumbres",
+            "stock": 12
+        }
     ],
     "sales": [
         { "id": 1, "quantitySold": 8, "date": "2023-02-27 06:30:36", "productId": 41, "clientId": 35 },
