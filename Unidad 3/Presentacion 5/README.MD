@@ -13,13 +13,14 @@ npm install
 
 ## Usage
 
-El primer paso debemos levantar el API Rest backend utilizando [json-server](https://www.npmjs.com/package/json-server)
+El primer paso debemos levantar el API Rest backend utilizando [json-server](https://www.npmjs.com/package/json-server). 
+Abrimos una consola y ejecutamos el siguiente comando.
 
 ```javascript
 npm run server
 ```
 
-Luego debemos correr el proyecto usando el siguiente correo
+Luego para poder correr index.js, abrimos una nueva consola y ejecutamos el siguiente comando.
 
 ```javascript
 npm start
