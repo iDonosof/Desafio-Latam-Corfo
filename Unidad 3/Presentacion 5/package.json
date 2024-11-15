@@ -1,0 +1,19 @@
+{
+    "name": "presentacion-5",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "server": "npx json-server ./common/db.json",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "json-server": "^1.0.0-beta.3",
+        "node-fetch": "^3.3.2"
+    },
+    "type": "module"
+}

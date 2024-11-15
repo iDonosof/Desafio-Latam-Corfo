@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Proyecto 1",
+      "startDate": "2024-11-13",
+      "tasks": [
+        {
+          "id": "1",
+          "description": "Proyecto 1 Tarea 1",
+          "status": "En progreso",
+          "limitDate": "2024-11-30"
+        },
+        {
+          "id": "2",
+          "description": "Proyecto 1 Tarea 2",
+          "status": "En progreso",
+          "limitDate": "2024-11-30"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Proyecto 2",
+      "startDate": "2024-11-13",
+      "tasks": [
+        {
+          "id": "3",
+          "description": "Proyecto 2 Tarea 1",
+          "status": "Completada",
+          "limitDate": "2024-11-30"
+        }
+      ]
+    }
+  ]
+}
