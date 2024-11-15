@@ -7,6 +7,7 @@ import { loadProjectDetails, updateProjectDetails, Notifier } from "./requiremen
 
 import PressToContinue from "./utils/PressToContinue.js";
 
+// Metodo agregado al prototype para facilitar el uso de dates
 Date.prototype.addDays = function (days) {
     this.setDate(this.getDate() + days);
     return this;
@@ -26,23 +27,24 @@ console.table(projects);
 await PressToContinue();
 
 console.log("******* Requerimiento 1 Punto 2 *******");
-console.table(showSummary(1));
+console.table(showSummary(1)); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 await PressToContinue();
 
 console.log("******* Requerimiento 1 Punto 3 *******");
-console.table(sortByLimitDate(1));
+console.table(sortByLimitDate(1)); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 1 *******");
+//Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 console.table(filterTasksProject(1, (task) => ["En progreso", "Pendiente"].includes(task.status)));
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 2 *******");
-console.table(`Dias restantes para terminar todas las tareas: ${calculateRemainingDays(1)}`);
+console.table(`Dias restantes para terminar todas las tareas: ${calculateRemainingDays(1)}`); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 3 *******");
-console.table(getCriticsTasks(1));
+console.table(getCriticsTasks(1)); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 await PressToContinue();
 
 console.log("******* Requerimiento 3 Punto 1 *******");
@@ -58,9 +60,12 @@ try {
             .map((pro) => pro.tasks.map((task) => parseInt(task.id)))
             .flat()
             .reduce((prev, curr) => (curr > prev ? curr : prev), 0) + 1;
+    // Task Id cambiada a string para coincidir con la data del json, 
+    // esta data no esta relacionada ni validada de la misma manera que las clases usadas en este archivo
     singleProject.tasks.push(new Task(maxId.toString(), "Nueva tarea desde api por codigo", "Completada", "2024-11-15"));
 
     const updateResponse = await updateProjectDetails(singleProject);
+    // La respuesta al retornar un objeto, la agregue a una lista para un correcto despliegue con console.table
     console.table([updateResponse]);
     console.table(updateResponse.tasks);
 } catch (err) {
@@ -86,5 +91,4 @@ notifier.addListener((task) => {
 const task = project.tasks.pop();
 task.status = "Completada";
 notifier.notify(task);
-console.log(task);
 await PressToContinue();
