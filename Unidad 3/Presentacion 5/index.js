@@ -48,7 +48,7 @@ console.table(filterTasksProject(1, (task) => ["En progreso", "Pendiente"].inclu
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 2 *******");
-console.table(`Dias restantes para terminar todas las tareas: ${calculateRemainingDays(2)}`); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
+console.table(`Dias restantes para terminar todas las tareas: ${calculateRemainingDays(1)}`); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 3 *******");
