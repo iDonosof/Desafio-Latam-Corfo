@@ -23,12 +23,12 @@ project.tasks.push(new Task(5, "Comenzar desarrollo", "Pendiente", new Date().ad
 project.tasks.push(new Task(6, "Cobrar 🤑", "Pendiente", new Date().addDays(20)));
 project.tasks.push(new Task(7, "Deployear", "Pendiente", new Date().addDays(30)));
 
-addProject(new Project(null, "Festejar finalizacion de prueba", new Date()));
-project.tasks.push(new Task(1, "Hacer una vaquita", "Completada", new Date()));
-project.tasks.push(new Task(2, "Definir que comprar", "Completada", new Date().addDays(6)));
-project.tasks.push(new Task(3, "Ir a comprar", "Completada", new Date().addDays(1)));
-project.tasks.push(new Task(4, "Preparar la comida", "En progreso", new Date().addDays(2)));
-project.tasks.push(new Task(5, "Festejar", "Pendiente", new Date().addDays(1)));
+const secondProject = addProject(new Project(null, "Festejar finalizacion de prueba", new Date()));
+secondProject.tasks.push(new Task(1, "Hacer una vaquita", "Completada", new Date()));
+secondProject.tasks.push(new Task(2, "Definir que comprar", "Completada", new Date().addDays(6)));
+secondProject.tasks.push(new Task(3, "Ir a comprar", "Completada", new Date().addDays(1)));
+secondProject.tasks.push(new Task(4, "Preparar la comida", "En progreso", new Date().addDays(2)));
+secondProject.tasks.push(new Task(5, "Festejar", "Pendiente", new Date().addDays(1)));
 
 console.table(projects);
 await PressToContinue();
@@ -48,7 +48,7 @@ console.table(filterTasksProject(1, (task) => ["En progreso", "Pendiente"].inclu
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 2 *******");
-console.table(`Dias restantes para terminar todas las tareas: ${calculateRemainingDays(1)}`); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
+console.table(`Dias restantes para terminar todas las tareas: ${calculateRemainingDays(2)}`); //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
 await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 3 *******");
