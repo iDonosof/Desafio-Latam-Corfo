@@ -23,6 +23,13 @@ project.tasks.push(new Task(5, "Comenzar desarrollo", "Pendiente", new Date().ad
 project.tasks.push(new Task(6, "Cobrar 🤑", "Pendiente", new Date().addDays(20)));
 project.tasks.push(new Task(7, "Deployear", "Pendiente", new Date().addDays(30)));
 
+addProject(new Project(null, "Festejar finalizacion de prueba", new Date()));
+project.tasks.push(new Task(1, "Hacer una vaquita", "Completada", new Date()));
+project.tasks.push(new Task(2, "Definir que comprar", "Completada", new Date().addDays(6)));
+project.tasks.push(new Task(3, "Ir a comprar", "Completada", new Date().addDays(1)));
+project.tasks.push(new Task(4, "Preparar la comida", "En progreso", new Date().addDays(2)));
+project.tasks.push(new Task(5, "Festejar", "Pendiente", new Date().addDays(1)));
+
 console.table(projects);
 await PressToContinue();
 
@@ -36,6 +43,7 @@ await PressToContinue();
 
 console.log("******* Requerimiento 2 Punto 1 *******");
 //Id  del proyecto hardcoded a proposito para agilizar el desarrollo
+// Se valida cualquier estado que no sea completado
 console.table(filterTasksProject(1, (task) => ["En progreso", "Pendiente"].includes(task.status)));
 await PressToContinue();
 
