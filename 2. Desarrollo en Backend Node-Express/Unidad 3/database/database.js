@@ -1,5 +1,4 @@
-import pkg from "pg";
-const { Pool } = pkg;
+const { Pool } = require("pg");
 
 const conn = {
     query: (queryString, values = []) => {
@@ -121,4 +120,4 @@ async function DeleteBooking(bookingId) {
     }
 }
 
-export { CreateUserInfo, GetUserByUsername, GetAvailableHours, AddBooking, UpdateBooking, DeleteBooking };
+module.exports = { CreateUserInfo, GetUserByUsername, GetAvailableHours, AddBooking, UpdateBooking, DeleteBooking };

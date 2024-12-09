@@ -1,10 +1,15 @@
-import express from "express";
-import middleware from "./middleware/middleware.js";
-
-import { GenerateToken, VerifyToken, DecodeToken } from "./utils/jwt.js";
-import { hash, compare } from "./utils/encrypting.js";
-
-import { CreateUserInfo, GetUserByUsername, GetAvailableHours, AddBooking, UpdateBooking, DeleteBooking } from "./database/database.js";
+const express = require("express");
+const middleware = require("./middleware/middleware.js");
+const { GenerateToken, VerifyToken, DecodeToken } = require("./utils/jwt.js");
+const { hash, compare } = require("./utils/encrypting.js");
+const {
+    CreateUserInfo,
+    GetUserByUsername,
+    GetAvailableHours,
+    AddBooking,
+    UpdateBooking,
+    DeleteBooking,
+} = require("./database/database.js");
 
 const app = express();
 
@@ -22,8 +27,13 @@ publicEndpoints.post("/sigin", async (req, res) => {
     const encryptedPassword = await hash(password);
 
     try {
-        const createdUser = await CreateUserInfo(username, encryptedPassword, fullName, userTypeId);
-        return res.json(createdUser);
+        const { id } = await CreateUserInfo(username, encryptedPassword, fullName, userTypeId);
+        return res.status(201).json({
+            id,
+            username,
+            fullName,
+            userTypeId,
+        });
     } catch (err) {
         return res.sendStatus(500);
     }
@@ -50,8 +60,13 @@ publicEndpoints.post("/login", async (req, res) => {
         }
         return res.sendStatus(401);
     } catch (err) {
+        console.error(err);
         return res.sendStatus(500);
     }
+});
+
+publicEndpoints.get("/ping", (req, res) => {
+    res.send("Ok");
 });
 
 privateEndpoints.get("/employees", async (req, res) => {
@@ -91,6 +106,11 @@ privateEndpoints.delete("/booking/:id", async (req, res) => {
     }
 });
 
-app.listen(process.env.DEFAULT_PORT, () => {
+const listener = app.listen(process.env.DEFAULT_PORT, () => {
     console.log("Server running");
 });
+
+module.exports = {
+    listener,
+    app,
+};

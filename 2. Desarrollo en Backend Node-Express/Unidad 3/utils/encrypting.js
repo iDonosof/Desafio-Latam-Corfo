@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+const bcrypt = require("bcrypt");
 
 async function hash(text) {
     return await bcrypt.hash(text, parseInt(process.env.DEFAULT_ENCRYPT_SALT));
@@ -8,4 +8,7 @@ async function compare(text, hash) {
     return await bcrypt.compare(text, hash);
 }
 
-export { hash, compare };
+module.exports = {
+    hash,
+    compare,
+};

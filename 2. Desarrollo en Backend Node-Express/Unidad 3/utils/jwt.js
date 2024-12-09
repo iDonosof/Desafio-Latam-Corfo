@@ -1,31 +1,28 @@
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
 function GenerateToken(user) {
-    return jwt.sign(user, process.env.SECRET_KEY)
+    return jwt.sign(user, process.env.SECRET_KEY);
 }
 
 function VerifyToken(token) {
     try {
         jwt.verify(token, process.env.SECRET_KEY);
         return true;
-    }
-    catch (err) {
+    } catch (err) {
         return false;
     }
-
 }
 
 function DecodeToken(token) {
     try {
         return jwt.verify(token, process.env.SECRET_KEY);
-    }
-    catch (err) {
+    } catch (err) {
         throw Error(err);
     }
 }
 
-export {
+module.exports = {
     GenerateToken,
     VerifyToken,
-    DecodeToken
-}
+    DecodeToken,
+};
