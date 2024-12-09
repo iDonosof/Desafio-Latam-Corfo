@@ -42,3 +42,11 @@ Y veremos el siguiente comando por consola
 ```
 Server running
 ```
+
+## Testing
+
+To run the test execute the following command
+
+```
+npm run test
+```
