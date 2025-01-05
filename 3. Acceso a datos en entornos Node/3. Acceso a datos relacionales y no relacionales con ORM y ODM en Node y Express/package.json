@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "compose": "docker compose up -d",
     "lint": "npx eslint src",
-    "dev": "tsc && node --env-file=.env dist/app.js",
-    "seed": "tsc && node --env-file=.env dist/database/seed.js"
+    "start": "npm run compose && tsc && node --env-file=.env dist/app.js",
+    "dev": "npm run compose && tsc && node --env-file=.env dist/database/seed.js && node --env-file=.env dist/app.js"
   },
   "keywords": [],
   "author": "",
