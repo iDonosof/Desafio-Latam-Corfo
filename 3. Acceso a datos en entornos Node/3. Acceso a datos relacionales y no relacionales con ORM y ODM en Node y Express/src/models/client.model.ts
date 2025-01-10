@@ -8,6 +8,7 @@ class Client extends Model<InferAttributes<Client>, InferCreationAttributes<Clie
     declare last_name: string;
     declare email: string;
     declare phone_number: string;
+    declare status: CreationOptional<number>;
     declare credential_id: number;
 }
 
@@ -38,6 +39,10 @@ Client.init(
         phone_number: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        status: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
         },
         credential_id: {
             type: DataTypes.INTEGER,
