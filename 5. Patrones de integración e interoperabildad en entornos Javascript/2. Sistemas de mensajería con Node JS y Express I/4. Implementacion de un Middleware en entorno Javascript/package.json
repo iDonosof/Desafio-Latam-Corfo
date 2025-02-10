@@ -1,0 +1,20 @@
+{
+  "name": "mensajeria-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "exercise.1": "nodemon exercise_1.js",
+    "exercise.2": "nodemon exercise_2.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

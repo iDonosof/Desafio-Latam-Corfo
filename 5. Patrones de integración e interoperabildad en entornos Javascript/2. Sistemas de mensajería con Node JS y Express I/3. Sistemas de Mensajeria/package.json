@@ -1,0 +1,16 @@
+{
+  "name": "sistema-mensajeria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "uuid": "^11.0.5"
+  }
+}
