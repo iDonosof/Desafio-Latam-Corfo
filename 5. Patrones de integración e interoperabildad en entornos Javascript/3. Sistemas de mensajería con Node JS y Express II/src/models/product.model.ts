@@ -1,5 +1,6 @@
 import { CreationOptional, DataTypes, InferAttributes, InferCreationAttributes, Model } from "sequelize";
 import connection from "../database/connection";
+import { MINIMUM_PRICE_ALLOWED, MINIMUM_STOCK_ALLOWED } from "../common/constants";
 
 class Product extends Model<InferAttributes<Product>, InferCreationAttributes<Product>> {
     declare id: CreationOptional<number>;
@@ -34,6 +35,7 @@ Product.init(
         product_price: {
             type: DataTypes.DECIMAL,
             allowNull: false,
+            defaultValue: MINIMUM_PRICE_ALLOWED,
         },
         category_id: {
             type: DataTypes.INTEGER,
@@ -42,6 +44,7 @@ Product.init(
         stock: {
             type: DataTypes.INTEGER,
             allowNull: false,
+            defaultValue: MINIMUM_STOCK_ALLOWED,
         },
     },
     {
