@@ -72,7 +72,7 @@ const roles: { [key: string]: Role } = {
     Cliente: {
         id: 5,
         name: "Cliente",
-        rights: ["read_user", "read_category", "read_product"],
+        rights: ["read_category", "read_product"],
     },
 };
 

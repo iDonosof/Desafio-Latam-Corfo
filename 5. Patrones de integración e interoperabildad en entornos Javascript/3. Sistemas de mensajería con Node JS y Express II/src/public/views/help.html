@@ -94,7 +94,6 @@
             });
 
             socket.on("getMessages", function (messages = []) {
-                console.log(messages);
                 messages.forEach((message) => {
                     const chat = document.querySelector("#chat");
 

@@ -17,7 +17,7 @@ import ChatMessage from "./types/ChatMessage";
 
 import roles from "./common/roles";
 
-// import error_handling from "./middlewares/error_handling.middleware";
+import error_handling from "./middlewares/error_handling.middleware";
 
 const app: Express = express();
 const rootRouter: Router = Router();
@@ -37,7 +37,7 @@ rootRouter.use("/category", categoryRouter);
 rootRouter.use("product", productRouter);
 // TODO: Create the routes to chat
 
-// app.use(error_handling); // TODO: Fix the error handling
+app.use(error_handling);
 
 const rooms: { [key: string]: { messages: ChatMessage[] } } = {};
 
@@ -60,7 +60,8 @@ io.on("connection", (socket: Socket<DefaultEventsMap | DefaultEventsMap | Defaul
             return;
         }
         socket.join(room_id);
-        socket.to(room_id).emit("getMessages", rooms[room_id].messages);
+
+        socket.emit("getMessages", rooms[room_id].messages);
     });
 
     socket.on("support", (role_id: number): void => {
@@ -84,17 +85,13 @@ io.on("connection", (socket: Socket<DefaultEventsMap | DefaultEventsMap | Defaul
         io.to(room_id).emit("getMessage", message);
     });
 
-    // socket.on("disconnect", (room_id: string): void => {
-    //     if (!rooms[room_id]) {
-    //         socket.emit("error", "Room not found");
-    //         return;
-    //     }
-    //     rooms[room_id].users = rooms[room_id].users.filter((user_id: string) => user_id !== socket.id);
-    //     socket.leave(room_id);
-    //     if (rooms[room_id].users.length === 0) {
-    //         delete rooms[room_id];
-    //     }
-    // });
+    socket.on("disconnect", (room_id: string): void => {
+        if (!rooms[room_id]) {
+            socket.emit("error", "Room not found");
+            return;
+        }
+        socket.leave(room_id);
+    });
 });
 
 httpServer.listen(DEFAULT_PORT, (): void => {
