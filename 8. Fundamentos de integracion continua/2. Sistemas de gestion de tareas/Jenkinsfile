@@ -1,0 +1,59 @@
+pipeline {
+    agent any
+    environment {
+        NODE_VERSION = '18'
+    }
+    stages {
+        stage('Navigate') {
+            steps {
+                script {
+                    sh 'cd \'.\\8. Fundamentos de integracion continua\2. Sistemas de gestion de tareas\\\''
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    try {
+                        echo 'Instalando dependencias...'
+                        sh 'npm install'
+                    } catch (Exception e) {
+                        error('❌ Error en la etapa de Build ' + e.message)
+                    }
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    try {
+                        echo 'Ejecutando pruebas...'
+                        sh 'npm run test'
+                    } catch (Exception e) {
+                        error('❌ Error en la etapa de Test ' + e.message)
+                    }
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    try {
+                        echo 'Desplegando aplicación...'
+                        sh 'npm run start &'
+                    } catch (Exception e) {
+                        error('❌ Error en la etapa de Deploy ' + e.message)
+                    }
+                }
+            }
+        }
+    }
+    post {
+        success {
+            echo '✅ Pipeline completado con éxito'
+        }
+        failure {
+            echo '❌ El pipeline ha fallado'
+        }
+    }
+}
