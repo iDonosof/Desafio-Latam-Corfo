@@ -1,0 +1,162 @@
+Started by user Dennisse Cannobbio
+Obtained jenkinsfile from git https://github.com/iDonosof/CI-CD-Corfo.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/PipeLineDesafioIntegracionContinuaDesafioLatam
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/PipeLineDesafioIntegracionContinuaDesafioLatam/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/iDonosof/CI-CD-Corfo.git # timeout=10
+Fetching upstream changes from https://github.com/iDonosof/CI-CD-Corfo.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.5'
+ > git fetch --tags --force --progress -- https://github.com/iDonosof/CI-CD-Corfo.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/denni-branch^{commit} # timeout=10
+Checking out Revision eb0120714f6168a0830d9131aaced2871d7d93ad (refs/remotes/origin/denni-branch)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f eb0120714f6168a0830d9131aaced2871d7d93ad # timeout=10
+Commit message: "ADD: Docker to pipeline"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Instalando dependencias...
+[Pipeline] sh
++ npm install
+npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+
+added 425 packages, and audited 426 packages in 1s
+
+65 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Ejecutando pruebas...
+[Pipeline] sh
++ npm run test
+
+> 2.-sistemas-de-gestion-de-tareas@1.0.0 test
+> jest
+
+PASS test/app.test.js
+  API
+    ✓ GET /tasks - Should return array of tasks (25 ms)
+    ✓ Should return the object of the task when the id is found (7 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.411 s
+Ran all test suites.
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build Docker Image)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Construyendo imagen Docker...
+[Pipeline] sh
++ docker build -t mi-aplicacion:2 .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 168B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:22
+#2 DONE 1.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 66B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/node:22@sha256:c7fd844945a76eeaa83cb372e4d289b4a30b478a1c80e16c685b62c54156285b
+#4 resolve docker.io/library/node:22@sha256:c7fd844945a76eeaa83cb372e4d289b4a30b478a1c80e16c685b62c54156285b 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.22MB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY package.json package-lock.json ./
+#7 DONE 0.1s
+
+#8 [4/5] RUN npm install
+#8 2.076 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#8 2.179 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#8 3.321 
+#8 3.321 added 425 packages, and audited 426 packages in 3s
+#8 3.321 
+#8 3.321 65 packages are looking for funding
+#8 3.321   run `npm fund` for details
+#8 3.322 
+#8 3.322 found 0 vulnerabilities
+#8 3.323 npm notice
+#8 3.323 npm notice New major version of npm available! 10.9.2 -> 11.2.0
+#8 3.323 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.2.0
+#8 3.323 npm notice To update run: npm install -g npm@11.2.0
+#8 3.323 npm notice
+#8 DONE 3.5s
+
+#9 [5/5] COPY . .
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 1.6s done
+#10 exporting manifest sha256:4a4c4aa03837ab8f3cfbf1dee466f20ff18f94a47d9f823d3e904546d9e608fc done
+#10 exporting config sha256:7a341f33ce20b1dbf6c22e6cd6899f000c7eac621ae32f566f6eb7b74d0dc1c4 done
+#10 exporting attestation manifest sha256:63492fea6103f0496741bdc62efac3dc983227f4b2d55631e3c11b0ac67470f3 0.0s done
+#10 exporting manifest list sha256:4c145c478e16aa0ffd6ede825d2dec2653d451b201e09327a39dbed9fe46ba9a done
+#10 naming to docker.io/library/mi-aplicacion:2 done
+#10 unpacking to docker.io/library/mi-aplicacion:2
+#10 unpacking to docker.io/library/mi-aplicacion:2 0.9s done
+#10 DONE 2.6s
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+✅ Pipeline completado con éxito
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

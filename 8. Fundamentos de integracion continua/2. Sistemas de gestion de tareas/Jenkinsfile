@@ -1,49 +1,31 @@
 pipeline {
     agent any
     environment {
-        NODE_VERSION = '18'
+        DOCKER_IMAGE_NAME = 'mi-aplicacion'
+        DOCKER_IMAGE_TAG = "${env.BUILD_NUMBER}"
     }
     stages {
-        stage('Navigate') {
-            steps {
-                script {
-                    sh 'cd \'.\\8. Fundamentos de integracion continua\2. Sistemas de gestion de tareas\\\''
-                }
-            }
-        }
         stage('Build') {
             steps {
                 script {
-                    try {
-                        echo 'Instalando dependencias...'
-                        sh 'npm install'
-                    } catch (Exception e) {
-                        error('❌ Error en la etapa de Build ' + e.message)
-                    }
+                    echo 'Instalando dependencias...'
+                    sh 'npm install'
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    try {
-                        echo 'Ejecutando pruebas...'
-                        sh 'npm run test'
-                    } catch (Exception e) {
-                        error('❌ Error en la etapa de Test ' + e.message)
-                    }
+                    echo 'Ejecutando pruebas...'
+                    sh 'npm run test'
                 }
             }
         }
-        stage('Deploy') {
+        stage('Build Docker Image') {
             steps {
                 script {
-                    try {
-                        echo 'Desplegando aplicación...'
-                        sh 'npm run start &'
-                    } catch (Exception e) {
-                        error('❌ Error en la etapa de Deploy ' + e.message)
-                    }
+                    echo 'Construyendo imagen Docker...'
+                    sh "docker build -t ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} ."
                 }
             }
         }
