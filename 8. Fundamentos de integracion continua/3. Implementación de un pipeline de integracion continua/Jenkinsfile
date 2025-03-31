@@ -1,11 +1,8 @@
 pipeline {
     agent any
     environment {
-        NODE_VERSION = '22'
+        NODE_VERSION = '18'
         PROJECT_DIR = 'Desafio-Latam-Corfo/8. Fundamentos de integracion continua/3. Implementación de un pipeline de integracion continua'
-    }
-    tools {
-        nodejs NODE_VERSION
     }
     stages {
         stage('Build') {
