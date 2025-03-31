@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    environment {
+        NODE_VERSION = '22'
+        PROJECT_DIR = '8. Fundamentos de integracion continua/3. Implementación de un pipeline de integracion continua'
+    }
+    tools {
+        nodejs NODE_VERSION
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo '📦 Installing dependencies...'
+                sh "cd '${PROJECT_DIR}' && npm install"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo '🧪 Running tests...'
+                sh "cd '${PROJECT_DIR}' && npm test"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo '🚀 Deploying application...'
+                sh "cd '${PROJECT_DIR}' && npm start > app.log 2>&1 &"
+            }
+        }
+    }
+    post {
+        success {
+            echo '✅ Pipeline completed successfully!'
+        }
+        failure {
+            echo '❌ Pipeline failed!'
+        }
+    }
+}
